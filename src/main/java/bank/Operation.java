@@ -50,6 +50,14 @@ public class Operation {
 		this.balance = balance;
 	}
 
+	public static Operation deposit(LocalDate executionDate, BigDecimal amount, BigDecimal balance) {
+		return new Operation(executionDate, amount, balance, OperationType.DEPOSIT);
+	}
+
+	public static Operation withdrawal(LocalDate executionDate, BigDecimal amount, BigDecimal balance) {
+		return new Operation(executionDate, amount, balance, OperationType.WITHDRAWAL);
+	}
+
 	@Override
 	public String toString() {
 
